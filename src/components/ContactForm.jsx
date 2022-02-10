@@ -40,13 +40,13 @@ export default class ContactForm extends Component {
           <Form.Control type="text" placeholder="Enter name" name="name" value={this.state.name} onChange={this.handleChange} />
         </Form.Group>
         <Form.Group className="mb-3" controlId="formBasicEmail">
-          <Form.Label>Phone number</Form.Label>
-          <Form.Control type="number" placeholder="Enter phone number" name="number" value={this.state.number} onChange={this.handleChange} />
+          <Form.Label>Location</Form.Label>
+          <Form.Control type="text" placeholder="Enter location" name="location" value={this.state.number} onChange={this.handleChange} />
         </Form.Group>
           
         <Form.Group className="mb-3" controlId="formBasicPassword">
-          <Form.Label>Location</Form.Label>
-          <Form.Control type="text" placeholder="location" name="location" value={this.state.location} onChange={this.handleChange} />
+          <Form.Label>Phone Number</Form.Label>
+          <Form.Control type="number" placeholder="Enter phone number" name="phone number" value={this.state.location} onChange={this.handleChange} />
         </Form.Group>
         <Button variant="primary" type="submit">
           Submit
