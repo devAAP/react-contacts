@@ -6,8 +6,8 @@ export default class ContactForm extends Component {
         super(props);
         this.state= { 
             name: '',
-            number: '', 
-            location: ''
+            location: '', 
+            number: ''
         }
     }
 
@@ -19,34 +19,37 @@ export default class ContactForm extends Component {
     };
     handleSubmit = (e) => {
         e.preventDefault();
-        this.props.addUser(this.state);
+        this.props.addContact(this.state);
         this.setState({
             name: '',
-            number: '', 
-            location: '' 
+            location: '',
+            number: '' 
+             
         });
         console.log('formSubmitted:', this.state);
     }
-    addNewContact = (user) => {
+
+    
+    addNewContact = (contact) => {
         this.setState({
-            users: [...this.state.users, user]
+            contacts: [...this.state.contacts, contact]
         })
     }
     render() {
     return (
         <Form onSubmit={this.handleSubmit}>
-        <Form.Group className="mb-3" controlId="formBasicEmail">
+        <Form.Group className="mb-3" controlId="formBasicName">
           <Form.Label>Name</Form.Label>
           <Form.Control type="text" placeholder="Enter name" name="name" value={this.state.name} onChange={this.handleChange} />
         </Form.Group>
-        <Form.Group className="mb-3" controlId="formBasicEmail">
+        <Form.Group className="mb-3" controlId="formBasicLocation">
           <Form.Label>Location</Form.Label>
-          <Form.Control type="text" placeholder="Enter location" name="location" value={this.state.number} onChange={this.handleChange} />
+          <Form.Control type="text" placeholder="Enter location" name="location" value={this.state.location} onChange={this.handleChange} />
         </Form.Group>
           
-        <Form.Group className="mb-3" controlId="formBasicPassword">
+        <Form.Group className="mb-3" controlId="formBasicPhoneNumber">
           <Form.Label>Phone Number</Form.Label>
-          <Form.Control type="number" placeholder="Enter phone number" name="phone number" value={this.state.location} onChange={this.handleChange} />
+          <Form.Control type="text" placeholder="Enter phone number" name="number" value={this.state.number} onChange={this.handleChange} />
         </Form.Group>
         <Button variant="primary" type="submit">
           Submit
